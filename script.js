@@ -3,15 +3,8 @@ let compScore = 0;
 
 function computerPlay (){
     let num = Math.floor(Math.random() * 3);
-    if(num == 0){
-        return ("rock");
-    }
-    else if(num == 1){
-        return ("paper");
-    }
-    else{
-        return ("scissors");
-    }
+    const array = ["rock", "paper", "scissors"];
+    return (array[num]);
 }
 
 function play (playerSelection, computerSelection){
@@ -72,8 +65,11 @@ function game(){
     if(playerScore > compScore){
         console.log("YOU WIN!!!");
     }
-    else{
+    else if(playerScore < compScore){
         console.log("YOU LOSE!!!");
+    }
+    else{
+        console.log("Its a Tie!!!");
     }
     
 

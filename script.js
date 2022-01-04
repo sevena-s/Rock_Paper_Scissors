@@ -16,6 +16,8 @@ function computerPlay (){
 
 function play (playerSelection, computerSelection){
     let player = playerSelection.toLowerCase();
+    console.log("Player:",player);
+    console.log("Computer:",computerSelection);
 
     if(player == computerSelection){
         return ("Its a Draw!");
@@ -53,13 +55,25 @@ function play (playerSelection, computerSelection){
 }
 
 function game(){
-    const player = prompt("Enter Rock, Paper or Scissors!");
 
     playerScore = 0;
     compScore = 0;
     for(let i = 0; i < 5; i++){
+        const player = prompt("Enter Rock, Paper or Scissors!");
         const computer = computerPlay();
+        console.log("ROUND ",(i+1));
         console.log(play(player,computer));
+        console.log("Player Score:",playerScore,"Computer Score:",compScore);
+        console.log("\n");
+    }
+
+    console.log("\n");
+    console.log("FINAL RESULTS:")
+    if(playerScore > compScore){
+        console.log("YOU WIN!!!");
+    }
+    else{
+        console.log("YOU LOSE!!!");
     }
     
 

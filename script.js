@@ -71,8 +71,46 @@ function game(){
     else{
         console.log("Its a Tie!!!");
     }
-    
-
 }
 
-game();
+function winner(){
+    if(playerScore == 5 || compScore == 5){
+        finalH.textContent = "FINAL RESULTS"
+        if(playerScore > compScore){
+            finalText.textContent = "YOU WIN!!!";
+        }
+        else if(playerScore < compScore){
+            finalText.textContent = "YOU LOSE!!!";
+        }
+        else{
+            finalText.textContent = "ITS A TIE!!!";
+        }
+        playerScore = 0;
+        compScore = 0;
+    }
+}
+
+const buttons = document.querySelectorAll('button');
+const results = document.querySelector('#results');
+const pRes = document.querySelector('#pResult');
+const cRes = document.querySelector('#cResult');
+const pScore = document.querySelector('#pScore');
+const cScore = document.querySelector('#cScore');
+const finalH = document.querySelector('#finalHeader');
+const finalText = document.querySelector('#final');
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        let buttonText = button.textContent;
+        let computerText = computerPlay();
+        let string = play(buttonText, computerText);
+        results.textContent = string;
+        pRes.textContent = buttonText;
+        cRes.textContent = computerText;
+        pScore.textContent = playerScore;
+        cScore.textContent = compScore;
+
+        winner();
+    });
+});
+

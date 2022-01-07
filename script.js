@@ -90,7 +90,12 @@ function winner(){
     }
 }
 
-const buttons = document.querySelectorAll('button');
+function resetGame(){
+    finalH.textContent = "";
+    finalText.textContent = "";
+}
+
+const buttons = document.querySelectorAll('.playButtons');
 const results = document.querySelector('#results');
 const pRes = document.querySelector('#pResult');
 const cRes = document.querySelector('#cResult');
@@ -98,6 +103,7 @@ const pScore = document.querySelector('#pScore');
 const cScore = document.querySelector('#cScore');
 const finalH = document.querySelector('#finalHeader');
 const finalText = document.querySelector('#final');
+const resetButton = document.querySelector('.resetButton');
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
@@ -113,4 +119,6 @@ buttons.forEach(button => {
         winner();
     });
 });
+
+resetButton.addEventListener('click', resetGame);
 

@@ -85,14 +85,14 @@ function winner(){
         else{
             finalText.textContent = "ITS A TIE!!!";
         }
-        playerScore = 0;
-        compScore = 0;
     }
 }
 
 function resetGame(){
     finalH.style.display = 'none';
     finalText.textContent = "";
+    playerScore = 0;
+    compScore = 0;
 }
 
 function removeTransition(e) {

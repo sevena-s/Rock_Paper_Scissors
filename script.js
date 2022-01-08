@@ -95,6 +95,11 @@ function resetGame(){
     finalText.textContent = "";
 }
 
+function removeTransition(e) {
+    if (e.propertyName !== 'transform') return;
+    this.classList.remove('pressed');
+  }
+
 const buttons = document.querySelectorAll('.playButtons');
 const results = document.querySelector('#results');
 const pRes = document.querySelector('#pResult');
@@ -104,6 +109,8 @@ const cScore = document.querySelector('#cScore');
 const finalH = document.querySelector('#finalHeader');
 const finalText = document.querySelector('#final');
 const resetButton = document.querySelector('.resetButton');
+
+buttons.forEach(button => button.addEventListener('transitionend', removeTransition));
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
@@ -115,6 +122,8 @@ buttons.forEach(button => {
         cRes.textContent = computerText;
         pScore.textContent = playerScore;
         cScore.textContent = compScore;
+
+        button.classList.add('pressed');
 
         winner();
     });

@@ -9,7 +9,7 @@ body{
 
 button{
     border: 1.5px solid black;
-
+    transition: all .30s ease;
 }
 
 .top{
@@ -138,3 +138,9 @@ button{
     font-family: myFirstFont;
     border-radius: 20%;
 }
+
+.pressed {
+    transform: scale(1.1);
+    border-color:#FCC3ED;
+    box-shadow: 0 0 1rem #FCC3ED;
+  }

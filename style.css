@@ -1,0 +1,146 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(./fonts/PixelOperator.ttf);
+  }
+
+body{
+    font-family: myFirstFont;
+}
+
+button{
+    border: 1.5px solid black;
+    transition: all .30s ease;
+}
+
+.top{
+    width: 1000px;
+    height: 750px;
+    /*background-image: url("https://data.whicdn.com/images/306688116/original.gif");*/
+    background-image: url("./photos/tumblr_53da82494b00630cbc70244d4fb554bc_3be50532_1280.gif");
+    background-repeat: no-repeat;
+    background-size: 1000px 750px;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title{
+    font-family: myFirstFont;
+    font-size: 75px;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+
+}
+
+.game{
+    width: 900px;
+    height: 650px;
+    background-color: rgba(211,211,211, 0.4);
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#rock{
+    background-image: url(./photos/rock.png);
+    background-repeat: no-repeat;
+    width: 190px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+#paper{
+    background-image: url(./photos/paper.png);
+    background-repeat: no-repeat;
+    width: 195px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+#scissors{
+    background-image: url(./photos/scissors.png);
+    background-repeat: no-repeat;
+    width: 195px;
+    height: 160px;
+    border-radius: 50%;
+}
+
+.scores{
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+    color: white;
+}
+
+.gameButtons{
+    display: flex;
+    margin-top: 32px;
+    gap: 24px;
+}
+
+.result{
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.round{
+    display: flex;
+    gap: 150px;
+    font-size: 32px;
+    margin-top: 32px;
+}
+
+.header{
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+    color: white;
+    font-size: 40px;
+}
+
+.roundResults{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.finalHeader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 50px;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+    color: white;
+}
+
+.gameover{
+    width: 400px;
+    height: 150px;
+    display: none;
+}
+
+.resetButton{
+    color: white;
+    background-color: #43369D;
+    width: 100px;
+    height: 50px;
+    font-size: 32px;
+    margin-top: 24px;
+    font-family: myFirstFont;
+    border-radius: 20%;
+}
+
+.pressed {
+    transform: scale(1.1);
+    border-color:#FCC3ED;
+    box-shadow: 0 0 1rem #FCC3ED;
+  }

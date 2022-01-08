@@ -71,8 +71,63 @@ function game(){
     else{
         console.log("Its a Tie!!!");
     }
-    
-
 }
 
-game();
+function winner(){
+    if(playerScore == 5 || compScore == 5){
+        finalH.style.display = 'block';
+        if(playerScore > compScore){
+            finalText.textContent = "YOU WIN!!!";
+        }
+        else if(playerScore < compScore){
+            finalText.textContent = "YOU LOSE!!!";
+        }
+        else{
+            finalText.textContent = "ITS A TIE!!!";
+        }
+    }
+}
+
+function resetGame(){
+    finalH.style.display = 'none';
+    finalText.textContent = "";
+    playerScore = 0;
+    compScore = 0;
+}
+
+function removeTransition(e) {
+    if (e.propertyName !== 'transform') return;
+    this.classList.remove('pressed');
+  }
+
+const buttons = document.querySelectorAll('.playButtons');
+const results = document.querySelector('#results');
+const pRes = document.querySelector('#pResult');
+const cRes = document.querySelector('#cResult');
+const pScore = document.querySelector('#pScore');
+const cScore = document.querySelector('#cScore');
+const finalH = document.querySelector('#finalHeader');
+const finalText = document.querySelector('#final');
+const resetButton = document.querySelector('.resetButton');
+
+buttons.forEach(button => button.addEventListener('transitionend', removeTransition));
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        let buttonText = button.id;
+        let computerText = computerPlay();
+        let string = play(buttonText, computerText);
+        results.textContent = string;
+        pRes.textContent = buttonText;
+        cRes.textContent = computerText;
+        pScore.textContent = playerScore;
+        cScore.textContent = compScore;
+
+        button.classList.add('pressed');
+
+        winner();
+    });
+});
+
+resetButton.addEventListener('click', resetGame);
+

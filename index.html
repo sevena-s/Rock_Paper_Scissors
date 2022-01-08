@@ -12,44 +12,41 @@
         <div class="content">
             <h2 class="title">ROCK PAPER SCISSORS</h2>
             <div class="game">
-
+                <div class="scores">
+                    <div>
+                        <div id="pScore">0</div>
+                    </div>
+                    :
+                    <div>
+                        <div id="cScore">0</div>
+                    </div>
+                </div>
+                <div id="results" class="result">
+                    Press Rock Paper or Scissors to Play!
+                </div>
+                <div class="finalHeader">
+                    <img id="finalHeader" src="./photos/gameover.png" class="gameover">
+                    <div id="final"></div>
+                </div>
+                <div class="gameButtons">
+                    <button id="rock" class="playButtons"></button>
+                    <button id="paper" class="playButtons"></button>
+                    <button id="scissors" class="playButtons"></button>
+                </div>
+                <div class="round">
+                    <div class="roundResults">
+                        <div class="header">Player</div>
+                        <div id="pResult">Paper</div>
+                    </div>
+                    <div class="roundResults">
+                        <div class="header">Computer</div>
+                        <div id="cResult">Paper</div>
+                    </div>
+                </div>
+                <button class="resetButton">RESET</button>
             </div>
         </div>
     </div>
-
-    <div>
-        <button class="playButtons">ROCK</button>
-        <button class="playButtons">PAPER</button>
-        <button class="playButtons">SCISSORS</button>
-    </div>
-    <div>
-        <div>
-            <h4>Player:</h4>
-            <div id="pResult">Paper</div>
-        </div>
-        <div>
-            <h4>Computer: </h4>
-            <div id="cResult">Paper</div>
-        </div>
-    </div>
-    <div id="results">
-        Results
-    </div>
-    <div>
-        <div>
-            <h4>Player Score:</h4>
-            <div id="pScore">0</div>
-        </div>
-        <div>
-            <h4>Computer Score: </h4>
-            <div id="cScore">0</div>
-        </div>
-    </div>
-    <div>
-        <h3 id="finalHeader"></h3>
-        <div id="final"></div>
-    </div>
-    <button class="resetButton">RESET</button>
 
     <script src="./script.js"></script>
 </body>

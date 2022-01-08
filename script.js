@@ -75,7 +75,7 @@ function game(){
 
 function winner(){
     if(playerScore == 5 || compScore == 5){
-        finalH.textContent = "FINAL RESULTS"
+        finalH.style.display = 'block';
         if(playerScore > compScore){
             finalText.textContent = "YOU WIN!!!";
         }
@@ -91,7 +91,7 @@ function winner(){
 }
 
 function resetGame(){
-    finalH.textContent = "";
+    finalH.style.display = 'none';
     finalText.textContent = "";
 }
 
@@ -107,7 +107,7 @@ const resetButton = document.querySelector('.resetButton');
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
-        let buttonText = button.textContent;
+        let buttonText = button.id;
         let computerText = computerPlay();
         let string = play(buttonText, computerText);
         results.textContent = string;
